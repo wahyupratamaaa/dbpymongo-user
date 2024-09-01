@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <!-- Link Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-r from-blue-50 to-blue-100 min-h-screen flex items-center justify-center">
+
+    <!-- Main Container -->
+    <div class="bg-white max-w-lg w-full rounded-2xl shadow-2xl p-8 m-4">
+        <h1 class="text-3xl font-extrabold text-center text-gray-800 mb-6">User Management System</h1>
+        
+        <!-- Add User Form -->
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold mb-4 text-gray-700">Add User</h2>
+            <form id="addUserForm" class="space-y-6">
+                <!-- Name Input -->
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-600">Name</label>
+                    <input type="text" id="name" name="name" required class="block w-full px-4 py-3 mt-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200">
+                </div>
+                <!-- Email Input -->
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-600">Email</label>
+                    <input type="email" id="email" name="email" required class="block w-full px-4 py-3 mt-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200">
+                </div>
+                <!-- Submit Button -->
+                <button type="submit" class="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-3 rounded-md font-semibold hover:from-indigo-600 hover:to-purple-700 transition duration-200 transform hover:scale-105">Add User</button>
+            </form>
+        </section>
+
+        <!-- Load Users Section -->
+        <section>
+            <h2 class="text-xl font-semibold mb-4 text-gray-700">All Users</h2>
+            <button onclick="fetchUsers()" class="w-full bg-gradient-to-r from-green-500 to-teal-600 text-white py-3 rounded-md font-semibold hover:from-green-600 hover:to-teal-700 transition duration-200 transform hover:scale-105 mb-4">Load Users</button>
+            <ul id="userList" class="list-disc pl-5 space-y-2 text-gray-700"></ul>
+        </section>
+    </div>
+
+    <!-- JavaScript to Handle Form Submission -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
